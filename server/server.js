@@ -4,10 +4,16 @@ const cors = require("cors");
 const bcryptjs = require("bcryptjs");
 const PORT = 5000;
 const app = express();
-const MONGB_UR = "mongodb://localhost:27017/ytLogin";
+const MONGB_UR = "mongodb+srv://gavinreji475:1234@user.46kkire.mongodb.net/ytLogin";
 
 // mdillrwre
-app.use(cors());
+app.use(cors(
+  {
+    origin: [],
+    methods: ["post","GET"],
+    credentials: true
+  }
+));//change 1 
 app.use(express.json());
 mongoose.connect(MONGB_UR);
 const db = mongoose.connection;

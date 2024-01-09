@@ -6,16 +6,17 @@ export default function Signup() {
     email: "",
     password: "",
   });
-
+  
   const handleChange = (e) => {
     setValue({
       ...value,
       [e.target.name]: e.target.value,
     });
   };
+  axios.defaults.withCredentials=true;
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const reigter = await axios.post("http://localhost:5000/register", value);
+    const reigter = await axios.post("https://mern-api-ochre.vercel.app/register", value);
     console.log(reigter.data);
     setValue({
       name: "",

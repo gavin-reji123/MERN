@@ -10,7 +10,7 @@ const MONGB_UR = "mongodb+srv://gavinreji475:1234@user.46kkire.mongodb.net/ytLog
 app.use(cors(
   {
     origin: ["https://mern-frontend-rho-amber.vercel.app"],
-    methods: ["post","GET"],
+    methods: ["post"],
     credentials: true
   }
 ));//change 1 

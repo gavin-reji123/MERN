@@ -10,12 +10,12 @@ const MONGB_UR = "mongodb+srv://gavinreji475:1234@user.46kkire.mongodb.net/ytLog
 app.use(cors(
   {
     origin: ["https://mern-frontend-rho-amber.vercel.app"],
-    methods: ["post"],
+    methods: ["POST","OPTIONS"],
     credentials: true
   }
 ));//change 1 
 app.use(express.json());
-mongoose.connect(MONGB_UR);
+mongoose.connect(MONGB_UR,{ useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", (err) => {
   console.error("Mongodb connnection error", err);
